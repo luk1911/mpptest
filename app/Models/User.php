@@ -22,7 +22,8 @@ class User extends Authenticatable
         'password',
         'address',
         'pesel',
-        'nip'
+        'nip',
+        'active'
     ];
 
     /**
@@ -47,4 +48,11 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function getById(int $id)
+    {
+        $user = $this->find($id);
+        return $user;
+    }
+
 }
